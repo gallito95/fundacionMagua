@@ -1,0 +1,39 @@
+main{
+    padding:10px;
+    max-width: 700px;
+    margin: 0 auto;
+   }
+   
+   img{
+       max-width: 100%; /* take only the space of the edible space */
+   }
+
+   
+   .post{
+     display: grid;
+     grid-template-columns: 0.9fr 1.1fr;
+     gap: 20px;
+     margin-bottom: 30px;
+   }
+   
+   .texts p {
+    font-size: 1.4rem;
+   }
+   
+   .texts h2 {
+       font-size: 2.5rem;
+       margin: 0;
+   }
+   
+   p.info{
+       color: white;
+       display: flex;
+       gap: 10px;
+       font-weight: bold;
+       font-size:1.2rem;
+   }
+   
+   .author{
+       color: dodgerblue;
+   }
+   

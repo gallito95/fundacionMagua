@@ -1,0 +1,205 @@
+button{
+  width: 100%;
+  margin-top: 100px;
+  background-color:   rgb(255, 150, 13);
+  height: 50px;
+  justify-content: center;
+  padding: 0 20px;
+  font-size: 18px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+/* Anpassung für das Layout der Kreditkarteninformationen */
+iframe[name="pwpp"]:not([style="position: absolute; visibility: hidden;"]) .paypal-button-fields .paypal-button-fields-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Stil für die erste Spalte */
+iframe[name="pwpp"]:not([style="position: absolute; visibility: hidden;"]) .paypal-button-fields .paypal-button-fields-wrapper > div:nth-child(-n+3) {
+  width: 50%;
+  box-sizing: border-box;
+  padding-right: 10px;
+}
+
+/* Stil für die zweite Spalte */
+iframe[name="pwpp"]:not([style="position: absolute; visibility: hidden;"]) .paypal-button-fields .paypal-button-fields-wrapper > div:nth-child(n+4) {
+  width: 50%;
+  box-sizing: border-box;
+  padding-left: 10px;
+}
+  
+
+.donate_Section{
+    display: flex;
+    justify-content: center; /* Horizontal in der Mitte zentrieren */
+  align-items: center; /* Vertikal in der Mitte zentrieren */
+    margin: 120px;
+}
+
+
+.donate_Heading{
+    text-align: center;
+    font-family: 'Edu TAS Beginner';
+}
+
+.donate_Heading_Subline{
+ font-size: 24px;
+ font-family: 'Edu TAS Beginner', cursive;
+ color: white; /* Schriftfarbe auf Weiß setzen */
+  animation: glowing 2s linear infinite; /* CSS-Animation hinzufügen */
+}
+
+
+
+@keyframes glowing {
+  0% {
+    color: white; /* Ausgangsfarbe (Weiß) */
+  }
+  50% {
+    color: rgb(255, 150, 13);/* Hellere Goldfarbe in der Mitte der Animation */
+  }
+  100% {
+    color: white; /* Zurück zur Ausgangsfarbe (Weiß) */
+  }
+}
+
+.donate_Button{
+    font-family: 'Edu TAS Beginner', cursive;
+    display: inline-block;
+      font-size: 28px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      width: 25%;
+      margin: auto;  
+       align-items: center;
+  justify-content: center;
+  padding: 0px 20px;}
+
+button:hover {
+    background-color: #ffd700; /* Hellere Goldfarbe auf Hover setzen */
+    box-shadow: 0 0 10px #ffd700; /* Leichter Schatten hinzufügen */
+  }
+
+.paypal_Button{
+  margin-left: 100px;
+  margin-top: 70px;
+}
+
+
+  @media screen  and (max-width:485px){
+    .donate_Section{
+      margin:40px;
+      gap:4rem;
+    }
+
+    .donate_Heading{
+      font-size: 2.0rem;
+    }
+
+    .donate_Heading_Subline{
+      font-size: 14px;
+    }
+
+    .donate_Button{
+      padding:6px;
+      font-size: 14px;
+      width: 30%;
+      margin-left: 10px;
+    }
+  }
+  
+
+  @media screen and (min-width: 485px) and (max-width:525px){
+    .donate_Section{
+      margin: 60px;
+    gap: 3rem;
+    }
+
+    .donate_Heading{
+      font-size: 2.3rem;
+    }
+
+    .donate_Heading_Subline{
+      font-size: 14px;
+    }
+
+    .donate_Button{
+      padding:6px;
+      font-size: 14px;
+      width: 35%;
+      margin-left: 15px;
+    }
+  }
+  
+
+
+
+
+  @media screen and (min-width: 525px) and (max-width:574px){
+    .donate_Section{
+      margin:80px;
+      gap:5rem;
+    }
+
+    .donate_Heading{
+      font-size: 2.3rem;
+    }
+
+    .donate_Heading_Subline{
+      font-size: 17px;
+    }
+
+    .donate_Button{
+      padding:6px;
+      font-size: 16px;
+      width: 30%;
+      margin-left: 15px;
+    }
+  }
+
+  
+  @media screen and (min-width: 575px) and (max-width:700px){
+    .donate_Section{
+      margin: 120px 60px;
+      gap:8rem;
+    }
+
+
+    .donate_Heading{
+      font-size: 3rem;
+    }
+
+    .donate_Heading_Subline{
+      font-size: 20px;
+    }
+
+    .donate_Button{
+      padding:7px;
+      font-size: 18px;
+      width: 25%;
+      margin-left: 20px;
+    }
+  }
+
+  @media screen and (min-width: 701px) and (max-width: 918px) {
+    .donate_Section{
+      margin: 120px 60px;
+    }
+
+    .donate_Button{
+      padding: 5px;
+      font-size: 18px;
+      width: 25%;
+    }
+  }
+
+  @media screen and (min-width: 919px) and (max-width: 1050px) {
+    .donate_Button{
+      padding:10px;
+      font-size: 20px;
+      width: 25%;
+    }
+  }

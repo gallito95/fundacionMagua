@@ -1,0 +1,15 @@
+input {
+    display: block;
+}
+
+.reactQuill{
+    background-color: white;
+}
+
+.reactQuill h1, .reactQuill h2, .reactQuill h3{
+    color: black;
+}
+
+.reactQuill p{
+    color: black;
+}

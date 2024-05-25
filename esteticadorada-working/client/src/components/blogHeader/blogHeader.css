@@ -1,0 +1,32 @@
+   
+   .blogHeader{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+    align-items: center;
+    margin-top: 20px;
+}
+.ourprojects{
+    text-decoration: underline;
+   }
+
+   
+
+.blogHeader a{
+    color: black;
+    font-weight: bold;
+}
+.blogHeader__nav{
+ background-color: white;
+ border-radius: 5px;
+}
+
+.blogHeader a.logo{
+    font-weight: bold;
+    font-size: 2.6rem;
+}
+
+.blogHeader nav{
+    display: flex;
+    gap:15px;
+}
