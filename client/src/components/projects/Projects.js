@@ -8,8 +8,8 @@ const Philosophy = () => {
 
 
   return (
-    <div className="block_filosofia">
-      <section className="block container  "id="ourProjects">
+    <div className="block_filosofia" id="projects">
+      <section className="block container" >
         <header className="block__header">
           <h2 className="block_header_headline"> Our Projects</h2>
         </header>

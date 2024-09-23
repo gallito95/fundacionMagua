@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 const ProjectFeature = ({ title, description, image, link }) => {
 
 
-  const truncatedContent = `${description.substring(0, 500)}...`;
+  const truncatedContent = `${description.substring(0, 400)}...`;
 
   return (
     

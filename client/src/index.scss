@@ -39,7 +39,8 @@ body {
   font-family: Inter, Arial, Helvetica, sans-serif;
   font-size: 2rem;
   line-height: 1.5;
-  color: var(--color-body);
+   
+
   margin: 0;
   
 }
@@ -729,7 +730,7 @@ a {
 
 
 .block_filosofia{
-  background: white;
+  background: #f5ece1;
  border: 2px solid black;
  
 }
@@ -906,10 +907,7 @@ a {
   margin: 0 auto;
 }
 
-.section-plans{
-background-image: url(./images/wall.jpg);
 
-}
 
 .container-service{
  background-color: rgb(28, 27, 27);
@@ -1225,9 +1223,7 @@ flex-direction: column;
 border-bottom: 5px solid black;
 }
 
-.panel1 { background-image:url(./images/athlete.jpg); }
-.panel2 { background-image:url(./images/bodybuilding.jpg); }
-.panel3 { background-image:url(./images/power.jpg); }
+
 
 
 
@@ -1421,3 +1417,11 @@ color:rgb(222, 198, 11);
 
 }
 
+
+
+.head__title {
+  color: black;
+  text-align: center;
+  margin-top: 10rem;
+
+}

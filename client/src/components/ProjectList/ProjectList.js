@@ -6,25 +6,25 @@ const ProjectList = () => {
   const projects = [
 
     {
-      title: 'Surveillance and enforcement program: ',
+      title: 'Training and Environmental Education',
       description:
-      "The foundation has implemented the enforcement of a xxxxm2 non take zone. The surveillance team patrol the area for deter poachers, gurantee the park rules are respected and irresponsible vessel management or perturbation of the local marine life.",
+      "In our ongoing efforts to foster a sense of environmental stewardship among the younger members of our community, we have implemented a comprehensive training and educational program specifically designed for children and young people in Sosúa. The primary objective of this initiative is to instill a deep-rooted awareness of environmental issues, with a particular focus on the care and preservation of our precious coastal and marine resources.",
       image: 'images/project1.jpg',
-      link: '/projects/post/655a3d0cb87fcd752ec3cfe6',
+      link: 'projects/education',
     },
     {
-      title: 'Marine laboratory: ',
+      title: 'Breeding Ground for Marine Species ',
       description:
-      "The foundation have a partnership with AZUL restaurant for a small scale pilot laboratory oriented to marine larvae research and experimental coral restoration via land based microfragmentation. The lab also had been used for the rearing of the long spined sea urchin (Diadema antillarum), a keystone herbivore necessary for coral health and small pilot experiments started in mid 2023 oriented to study the relationship between corals and heat resistant zooxanthellae. We are currently aiming to restore our marine station near El Tablon Ecological Park in order to build up a large-scale marine station with a wide laboratory for coral production. In this sense we are currently in the search for the needed funding.",
+      "The implementation of rigorous protection measures and the strategic placement of artificial structures within the project area have led to a significant increase in the reef fish population. These efforts are part of a broader initiative aimed at conserving marine biodiversity and fostering the sustainable reproduction of various fish species. By creating an environment conducive to fish breeding and growth, we have observed remarkable improvements in the health and diversity of marine life in our targeted locations.",
       image: 'images/project2.jpg',
-      link: '/about-us',
+      link: 'projects/breeding',
     },
     {
-      title: 'Coral restoration: ',
+      title: 'Mangrove Restoration ',
       description:
-      "Corals are colonial organisms which belongs to the phylum Cnidaria. Cnidarians are a group of aquatic invertebrates that includes jellyfish, sea anemones, hydroids, corals and hydrozooans. They are considered a keystone species for the coastal economy due to their hability to build up reef systems and tropical beaches, as well as support fisheries. These creatures are made up by polyps that constantly divide and reproduce either via sexual and asexual propagation by break up of polyps or pieces that can form new colonies with the same genetic identity.Our coral restoration approach follows a wide array of innovative techniques combined with standardized techniques for an adapted hybrid methodology well suited for the high energy at the north shore. Coral restoration is currently being done at medium scale via asexual reproduction. We rescue broken or damaged colonies and cut fragments to cultivate them in nurseries or outplant them back to the reef. We also grow fragments from healthy donor colonies and the most resilient genotypes in the hope they can cope with the future conditions, predicted for the ocean during the early Anthropocene which promises to be severely overfished, polluted, hot and more acidic due to the current human overpopulation and the derived widespread environmental damage being caused by us. We grow and restore corals within the follow methods:       ",
-      image: 'images/project3.jpg',
-      link: '/about-us',
+      "Mangrove reforestation in the Sosúa River estuary has been an ongoing effort employing various innovative and traditional methods to ensure the successful restoration of this critical ecosystem. These efforts have led to the recovery of substantial linear meters of mangroves throughout the entire estuary, significantly enhancing the ecological health and resilience of the area. ",
+      image: 'images/project3.jpeg',
+      link: 'projects/mangrove',
     },
     // Füge hier weitere Projekte hinzu
   ];

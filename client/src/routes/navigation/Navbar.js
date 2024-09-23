@@ -27,12 +27,10 @@ const Navbar  = () => {
         </div>
         <ul className={menuOpen ? "open" : ""}>
           <li ><a href="/#donation">Donate</a></li>
+          <li ><a href="/#projects">Projects</a></li>
           
           <li>
             <NavLink to="/Volunteering"> Volunteering </NavLink>
-          </li>
-          <li>
-          <NavLink to="/projects"> Projects</NavLink>
           </li>
           <li>
             <NavLink to="/services"> Services</NavLink>
@@ -43,18 +41,6 @@ const Navbar  = () => {
           <li className="nav__itemSocial"><SocialIcon bgColor="rgb(255, 150, 13)"  target="_blank"  style={{ width: '40px', height: '40px' }}  url="https://www.instagram.com/fundacionecologicamagua/" /></li>
         </ul>
       </nav>
-
-
-    {/* <nav className="nav collapsible">
-        <div className="nav__content">
-          <div className='nav__content-Name' >
-          </div>
-        </div>  
-     
-        <li className="nav__item nav__itemSocial"><SocialIcon bgColor="rgba(255, 228, 24, 0.938)"  target="_blank" url="https://www.instagram.com/fundacionecologicamagua/" /></li>
-       
-      </ul>
-    </nav> */}
     <Outlet />
   </header>
   )

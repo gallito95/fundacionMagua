@@ -1,8 +1,8 @@
 import React from 'react'
 import './AboutUs.css'
 import Footer from '../../components/footer/Footer'
+import Team from '../../components/team/team'
 import FoundationImage from '../../images/foundation image.png'
-
 const AboutUS = () => {
 
 
@@ -26,7 +26,7 @@ const AboutUS = () => {
      </p>
      <img  className="aboutUS__Image" src={FoundationImage }  alt="not working"/>
     </div>
-    
+    <Team/>
     <Footer/>
       </form>
      

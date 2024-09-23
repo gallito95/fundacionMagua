@@ -1,0 +1,66 @@
+.team_Container{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.team_Headline{
+    text-align: center;
+    color: black;
+    font-size: 3rem;
+}
+
+.team_Image{
+    flex: 1 1 calc(25%);
+    margin: 50px;
+    box-sizing: border-box;
+    max-width: 300px;
+}
+
+.team_Image >p {
+    text-align: center;
+    font-weight: bold;
+}
+
+@media screen and (min-width:723px) and (max-width: 1200px) {
+    .team_Image{
+        margin:25px
+    }
+}
+
+@media screen and (max-width:1000px){
+    .team_Image{
+        max-width: 200px;
+    }
+}
+
+@media screen and (min-width: 600px) and (max-width: 722px) {
+    .team_Headline {
+        font-size: 2.5rem;
+    }
+
+    .team_Image{
+        margin:25px
+    }
+}
+
+@media screen and (min-width:500px) and (max-width:599px){
+    .team_Headline{
+        font-size:2rem;
+    }
+
+    .team_Image{
+        margin:25px
+    }
+}
+
+@media screen and (max-width:499px) {
+  .team_Headline{
+    font-size: 2rem;
+  margin-top: 8rem;
+  }
+
+  .team_Image{
+    margin:25px
+}
+}

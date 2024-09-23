@@ -51,7 +51,7 @@ const blogHeader =
   return (
     <header className={`blogHeader ${isBlogPage ? 'whiteText' : ''}`} >
             <Link to="/projects" className='ourprojects'>Our Projects</Link>
-            <nav className='blogHeader__nav'>
+            {/* <nav className='blogHeader__nav'>
               {username && (
                 <>
                 <Link to="/projects/create"> Create new post</Link>
@@ -66,7 +66,7 @@ const blogHeader =
                 </>
               )}
              
-            </nav>
+            </nav> */}
           </header>
   )
 }

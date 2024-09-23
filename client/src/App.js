@@ -11,6 +11,9 @@ import ProjectsRegister from './components/projectsRegister/projectsRegister'
 import CreatePost from "./components/createPost/createPost"
 import Postpage from "./components/postPage/postPage"
 import EditPost from "./components/editPost/editPost"
+import Mangrove from "./components/FrontendProjects/mangrove/mangrove"
+import Education from "./components/FrontendProjects/education/education"
+import Breeding from "./components/FrontendProjects/breeding/breeding"
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useEffect } from 'react';
@@ -40,6 +43,9 @@ function App() {
     <Route path="projects/create" element={<CreatePost />}/>
     <Route path="projects/post/:id" element={<Postpage/>}/>
     <Route path="projects/edit/:id" element={<EditPost/>}/>
+    <Route path="projects/mangrove" element={<Mangrove/>}/>
+    <Route path="projects/education" element={<Education/>}/>
+    <Route path="projects/breeding" element={<Breeding/>}/>
        </Route>  
   </Routes>
   </UserContextProvider>

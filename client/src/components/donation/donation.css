@@ -50,6 +50,16 @@ iframe[name="pwpp"]:not([style="position: absolute; visibility: hidden;"]) .payp
   animation: glowing 2s linear infinite; /* CSS-Animation hinzufügen */
 }
 
+.donate_Input{
+  display: flex;
+  margin-top: 10px;
+}
+
+.donate_Input >input{
+  width:35%;
+  margin-right: 10px;
+}
+
 
 
 @keyframes glowing {

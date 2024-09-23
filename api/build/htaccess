@@ -1,0 +1,11 @@
+RewriteEngine On
+RewriteBase /
+
+# Redirect 404 errors to index.html
+ErrorDocument 404 /index.html
+
+# You may also want to add other rewrite rules for routing in your React app
+# For example, if you're using React Router, you might need something like this:
+# RewriteCond %{REQUEST_FILENAME} !-f
+# RewriteCond %{REQUEST_FILENAME} !-d
+# RewriteRule ^(.*)$ /index.html [L,QSA]

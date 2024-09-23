@@ -36,9 +36,11 @@
   max-width: 350px;
   margin-right: 10px;
 }
+
 .services__Maintitle{
   color: black;
-  margin-top: 150px;
+  text-decoration: underline;
+  margin-top: 100px;
 }
 
 .services__title{
@@ -58,7 +60,7 @@
   font-size: 3rem;
 }
 
-.services__container{
+body .services__container{
   height: 70vh;
 }
 
@@ -74,12 +76,16 @@
     font-size: 2.8rem;
   }
   
-  .services__container{
-    height: 70vh;
+  body .services__container{
+    height: 80vh;
   }
   
   .services__content{
     font-size: 1.3rem;
+  }
+
+  .title_special{
+    margin-top: 10rem;
   }
 
   
@@ -91,12 +97,16 @@
     font-size: 2.5rem;
   }
   
-  .services__container{
-    height: 60vh;
+  body .services__container{
+    height: 80vh;
   }
   
   .services__content{
     font-size: 1.1rem;
+  }
+
+  .title_special{
+    margin-top: 10rem;
   }
   
 }
@@ -113,5 +123,17 @@
 
   .div1{
     width: 90%;
+  }
+
+  body .services__title{
+    font-size: 2.5rem;
+  }
+
+  .services__Maintitle{
+    margin-bottom: 3rem;
+  }
+
+  .title_special{
+    margin-top: 10rem;
   }
 }

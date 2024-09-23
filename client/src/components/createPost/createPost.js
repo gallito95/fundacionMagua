@@ -31,7 +31,7 @@ ev.preventDefault();
   
 
  if(redirect) {
-  return <Navigate to={'/blog'} />
+  return <Navigate to={'/projects'} />
 }
   return(
     <div>

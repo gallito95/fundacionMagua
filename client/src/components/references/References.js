@@ -37,7 +37,7 @@ const References = () => {
     },
     { 
       id: 4,
-      name: "Xi Yun",
+      name: "John Carter",
       img:
         Men2,
      info: "we made 'coral cakes ' with micro fragments of corals that were rescued and treated for a coral disease, we placed them in the ocean nursery where they will fuse into a mature coral colony and reproduce. So proud to be a 'coral dad'"

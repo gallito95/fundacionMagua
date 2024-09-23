@@ -1,6 +1,5 @@
 body {
-    background-color: #fffcc9;
-   
+    background-color: #d8c8b694;
 }
 
 
@@ -47,40 +46,35 @@ body {
   }
   
   
-  @media screen and (min-width: 768px) and (max-width: 1030px) {
-  
-    
-  .services__title{
-    font-size: 3rem;
-  }
-  
-  .services__container{
-    height: 70vh;
-  }
-  
-  .services__content{
-    font-size: 1.5rem;
-  }
-  
-  }
-  
-  
   @media screen and (min-width: 600px) and (max-width: 767px) {
-    .services__title{
+    .services__title {
       font-size: 2.8rem;
     }
     
-    .services__container{
-      height: 70vh;
+    .services__container {
+      height: 50vh;
     }
     
-    .services__content{
+    .services__content {
       font-size: 1.3rem;
     }
-  
-    
-  
   }
+  
+  @media screen and (min-width: 768px) and (max-width: 1030px) {
+    .services__title {
+      font-size: 3rem;
+    }
+    
+    .services__container {
+      height: 70vh;
+      margin-bottom: 10rem;
+    }
+    
+    .services__content {
+      font-size: 1.5rem;
+    }
+  }
+
   
   @media screen and (min-width:500px) and (max-width: 600px) {
     .services__title{

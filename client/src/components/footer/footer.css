@@ -1,11 +1,11 @@
 .footer {
-    background: white;
+    background: rgb(249, 249, 249);;;
     width: 100%;
   
   }
   
   .footer a {
-    color: rgb(255, 255, 255);
+    color: rgb(249, 249, 249);;
     transition: color 0.3s;
   }
   

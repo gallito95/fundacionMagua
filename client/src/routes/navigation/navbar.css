@@ -1,16 +1,15 @@
 .active{
-    background-color: #1d4ed8;
+    text-decoration: underline;
 }
 
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: white;
+    background-color: rgb(249, 249, 249);;
     position: sticky;
     top: 0;
     padding: 0px 20px 0px 20px;
-    border: 2px black solid;
 }
 
 .nav__brand {
@@ -146,9 +145,7 @@ nav .menu span {
         margin: 0.2rem 0.5rem;
     }
 
-    img {
-        
-      }
+    
 }
 
 @media screen and (min-width:500px) and  (max-width: 599px){
