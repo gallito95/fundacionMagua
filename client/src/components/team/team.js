@@ -1,4 +1,4 @@
-import './team.css'
+import './team.scss'
 import Manuel from '../../images/Manuel.jpeg'
 import Adolfo from '../../images/Adolfo.jpeg'
 import Fray from '../../images/Fray.jpeg'
@@ -16,7 +16,7 @@ import TL from '../../images/Logo_TL.png'
 const Team = () => {
     return (
      <div>
-        <h2 className='team_Headline'> Our Team</h2>
+        <h2 className='team_Headline'> The Team</h2>
       <div className='team_Container'>
         <div className='team_Image' >
          <img src={Manuel} />
@@ -49,15 +49,15 @@ const Team = () => {
          <img src={Zion} />
         </div>
       </div>
-      <h2 className='team_Headline'> Our Sponsors</h2>
-      <div className='team_Container'>
-      <div className='team_Image' >
+      <h2 className='sponsor_Headline'> Our Sponsors</h2>
+      <div className='sponsor_Container'>
+      <div className='sponsor_Image' >
          <img src={Cemento} />
         </div>
-        <div className='team_Image' >
+        <div className='sponsor_Image' >
          <img src={KFC} />
         </div>
-        <div className='team_Image' >
+        <div className='sponsor_Image' >
          <img src={TL} />
         </div>
       </div>

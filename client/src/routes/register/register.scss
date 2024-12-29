@@ -1,0 +1,63 @@
+body {
+    background: linear-gradient( to bottom,  #d6ecff,  #ffffff); 
+}
+
+.register__Container{
+   background: transparent;
+    height: auto;
+    margin-top: 80px;
+    font-family: "Nanum Gothic", sans-serif;
+    
+    h3{
+        text-align: center;
+        color: black;
+        font-size: 2rem;
+    }
+
+    .register__Inputs{
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Zentrierung der Inhalte in der Spalte */
+        margin-bottom: 200px;
+
+
+        input{
+            width: 200px;
+            margin-top: 20px;
+        }
+
+        button{
+            width: 200px;
+            background-color: rgb(255, 150, 13);
+            height: 40px;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .login__Account{
+            text-align: center;
+
+            p{
+                margin: 20px 0;
+                font-size: 1.6rem
+            }
+        }
+    }
+
+  
+}
+
+
+@media screen and (min-width:768px) {
+    .register__Container {
+        margin-top: 100px;
+
+        h3{
+            font-size: 2.5rem;
+        }
+
+        .register__Inputs{
+            margin-bottom: 250px;
+        }
+    }
+}

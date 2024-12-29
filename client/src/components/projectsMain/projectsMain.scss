@@ -1,0 +1,112 @@
+
+
+.projectsContainer{
+  background: linear-gradient(to bottom, #ffffff, #d6ecff);;
+
+  margin-top: -76px;
+  margin-bottom: -130px;
+  clip-path: polygon(0% 1%, 100% 0%, 100% 95%, 0% 100%);
+}
+
+.mHeadline{
+  text-align: center;
+  padding-top: 100px;
+  color: black;
+  margin-bottom: -70px;
+  font-size: 2.8rem;
+  font-style: italic;
+  text-decoration: underline;
+}
+
+.postsM {
+    display: block; /* Testweise auf block setzen */
+    max-width: 500px;           /* Maximale Breite des Containers */                /* Breite des Containers auf 100% setzen */
+    margin: 0 25px;            /* Zentriert den Container horizontal */
+    padding: 50px 15px;          /* Padding von 100px links und rechts */
+    box-sizing: border-box;
+  }
+
+
+  .head__title{
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+  }
+
+
+ .content{
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  margin-top: 250px;
+ }
+
+ .see-all-projects{
+  font-size: 2.5rem;
+  padding-bottom: 120px;
+  
+
+  a{
+    color: black;
+    font-style: italic;
+    margin-left: 20px;
+    
+  }
+}
+ 
+
+.notused{
+  color:black
+}
+
+@media screen and (min-width:480px) {
+  .mHeadline{
+   font-size: 3.2rem;
+  }
+
+  .postsM{
+  margin: 0 auto;
+  }
+
+  .see-all-link{
+    font-size: 2.8rem;
+  }
+}
+
+@media screen and (min-width:768px) {
+  .postsM{
+    max-width: 600px;
+  }
+
+  .mHeadline{
+    font-size: 3.5rem;
+   }
+}
+
+@media  screen and (min-width:1024px) {
+  .postsM{
+    max-width: 1200px;
+  }
+
+  .see-all-link{
+    font-size: 3.2rem;
+  }
+}
+
+@media  screen and (min-width: 1280px) {
+  .mHeadline{
+    font-size: 4rem;
+   }
+}
+
+@media screen and (min-width:1440px){
+  .postM{
+    max-width: 1300px;
+  }
+}
+
+@media screen and (max-width: 930px) and (max-height: 428px) and (orientation: landscape) {
+  .postsM{
+    max-width: 800px;
+  }
+}

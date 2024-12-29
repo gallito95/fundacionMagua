@@ -3,7 +3,7 @@ import Logo from '../../Icons/logo.png'
 import { faEnvelope} from '@fortawesome/free-solid-svg-icons';
 import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import "./footer.css";
+import "./footer.scss";
 
 const Footer = () => {
   return (
@@ -11,10 +11,10 @@ const Footer = () => {
     <div className="container grid footer__sections">
       <section className="collapsible footer__section">
         <div className="collapsible__header">
-          <h3 className=" footer__heading">Contact: </h3>
           <div className= "footer__contact">
-          <p> <FontAwesomeIcon icon={faEnvelope} /> fundacionecologicamagua@outlook.com </p>
+      
           <p>  <FontAwesomeIcon icon={faWhatsapp} /> +1809 623 4017</p>
+          <p> <FontAwesomeIcon icon={faEnvelope} /> fundacionecologicamagua@outlook.com </p>
         </div>
         </div>
       </section>

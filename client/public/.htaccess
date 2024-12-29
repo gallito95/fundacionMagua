@@ -1,0 +1,10 @@
+RewriteEngine On
+RewriteBase /
+
+# Weiterleitung aller Anfragen, die keine echten Dateien oder Verzeichnisse sind, an index.html
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ index.html [L,QSA]
+
+# Optional: 404-Fehler explizit an index.html weiterleiten
+ErrorDocument 404 /index.html

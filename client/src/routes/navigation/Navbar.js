@@ -3,7 +3,7 @@ import React from 'react'
 import Logo from '../../Icons/logo.png'
 import { NavLink } from 'react-router-dom'
 import { SocialIcon } from 'react-social-icons'
-import './navbar.css'
+import './navbar.scss'
 import { useState } from 'react'
 
 
@@ -14,7 +14,7 @@ const Navbar  = () => {
   return (
     <header>
         <nav>
-         
+          <div className='nav__container'>
           <a className="nav__brand" href="/"><img src={Logo}  alt="not working"/></a>
          
         
@@ -27,10 +27,12 @@ const Navbar  = () => {
         </div>
         <ul className={menuOpen ? "open" : ""}>
           <li ><a href="/#donation">Donate</a></li>
-          <li ><a href="/#projects">Projects</a></li>
+          <li>
+            <NavLink to="/projects"> Projects</NavLink>
+          </li>
           
           <li>
-            <NavLink to="/Volunteering"> Volunteering </NavLink>
+            <NavLink to="/volunteering"> Volunteering </NavLink>
           </li>
           <li>
             <NavLink to="/services"> Services</NavLink>
@@ -40,6 +42,7 @@ const Navbar  = () => {
           </li>
           <li className="nav__itemSocial"><SocialIcon bgColor="rgb(255, 150, 13)"  target="_blank"  style={{ width: '40px', height: '40px' }}  url="https://www.instagram.com/fundacionecologicamagua/" /></li>
         </ul>
+        </div>
       </nav>
     <Outlet />
   </header>

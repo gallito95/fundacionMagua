@@ -1,42 +1,52 @@
-import React from 'react';
-import ProjectFeature from '../Projectfeatures/ProjectFeature';
+import { React, useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import axios from "axios";
+import '../ProjectList/projectList.scss';
+import Project3 from '../../images/mangrove1500.webp';
+import Project5 from '../../images/unicorn.jpg';
+import Project1 from '../../images/project1.jpg';
+
 const ProjectList = () => {
+  const [posts, setPosts] = useState([]);
+  const cat = useLocation().search;
 
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const res = await axios.get(`https://ecomagua.org/api/posts/${cat}`);
+        setPosts(res.data);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    fetchData();
+  }, [cat]);
+  
 
-  const projects = [
-
-    {
-      title: 'Training and Environmental Education',
-      description:
-      "In our ongoing efforts to foster a sense of environmental stewardship among the younger members of our community, we have implemented a comprehensive training and educational program specifically designed for children and young people in Sosúa. The primary objective of this initiative is to instill a deep-rooted awareness of environmental issues, with a particular focus on the care and preservation of our precious coastal and marine resources.",
-      image: 'images/project1.jpg',
-      link: 'projects/education',
-    },
-    {
-      title: 'Breeding Ground for Marine Species ',
-      description:
-      "The implementation of rigorous protection measures and the strategic placement of artificial structures within the project area have led to a significant increase in the reef fish population. These efforts are part of a broader initiative aimed at conserving marine biodiversity and fostering the sustainable reproduction of various fish species. By creating an environment conducive to fish breeding and growth, we have observed remarkable improvements in the health and diversity of marine life in our targeted locations.",
-      image: 'images/project2.jpg',
-      link: 'projects/breeding',
-    },
-    {
-      title: 'Mangrove Restoration ',
-      description:
-      "Mangrove reforestation in the Sosúa River estuary has been an ongoing effort employing various innovative and traditional methods to ensure the successful restoration of this critical ecosystem. These efforts have led to the recovery of substantial linear meters of mangroves throughout the entire estuary, significantly enhancing the ecological health and resilience of the area. ",
-      image: 'images/project3.jpeg',
-      link: 'projects/mangrove',
-    },
-    // Füge hier weitere Projekte hinzu
-  ];
+  // Funktion zum Kürzen des Texts auf 300 Zeichen
+  const truncateText = (text, maxLength) => {
+    if (!text) return '';
+    return text.length > maxLength ? text.slice(0, maxLength) + '...' : text;
+  };
 
   return (
-    <div>
-      {projects.map((project, index) => (
-        <ProjectFeature key={index} {...project} />
-      ))}
+    <div className="home">
+      <div className="posts" >
+        {posts.map((post) => (
+          <div className="post" key={post.id} data-aos="flip-left" data-aos-duration="1500">
+            <div className="projectListcontent">
+              <Link className="link" to={`/post/${post.id}`}>
+                <h1 className='projects__title'>{post.title}</h1>
+                {post.img &&  <img src={`https://ecomagua.org/api/uploads/${post?.img}`} alt="" />}
+              </Link>
+              <p className="projects__content" dangerouslySetInnerHTML={{ __html: truncateText(post.desc, 500) }}></p>
+         
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
 
 export default ProjectList;
-

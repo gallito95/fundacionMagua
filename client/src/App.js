@@ -3,21 +3,25 @@ import {Routes,Route} from "react-router-dom"
 import Navigation from "./routes/navigation/Navbar"
 import AboutUs from "./routes/aboutUs/AboutUs"
 import Services from "./routes/services/services"
-import Projects from "./routes/projectsCollection/projectsColllection"
-import Volunteering from "./routes/volunteering/Volunteering"
-
+import Projects from "./routes/projects/projects.js"
+import Volunteering from "./routes/volunteering/volunteering.js"
 import ProjectsLogin from './components/projectsLogin/projectsLogin'
 import ProjectsRegister from './components/projectsRegister/projectsRegister'
 import CreatePost from "./components/createPost/createPost"
 import Postpage from "./components/postPage/postPage"
 import EditPost from "./components/editPost/editPost"
-import Mangrove from "./components/FrontendProjects/mangrove/mangrove"
-import Education from "./components/FrontendProjects/education/education"
-import Breeding from "./components/FrontendProjects/breeding/breeding"
+import Mangrove from "./components/articles/mangrove/mangrove.jsx"
+import Breeding from "./components/articles/breeding/breeding.jsx"
+import Education from "./components/articles/education/education.jsx"
+import Unicorn from "./components/articles/unicorn/unicorn.jsx"
+
+import Register from "./routes/register/register"
+import Login from "./routes/login/login"
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useEffect } from 'react';
-import { UserContextProvider } from "./UserContext"
+import { AuthContexProvider } from "./context/authContext"
+import Test from "./components/Test.js"
 
 
 
@@ -30,25 +34,29 @@ function App() {
 
 
   return (
-    <UserContextProvider>
+    <AuthContexProvider>
     <Routes>
     <Route path="/" element={<Navigation/>}>   
     <Route index element={<Home/> }/>
     <Route path="about-us" element={<AboutUs/>}/>
     <Route path="services" element={<Services/>}/> 
     <Route path ="volunteering" element={<Volunteering/>}/>
+    {/* <Route path="register" element={<Register/>}/> */}
+    <Route path="login" element={<Login/>}/>
+    <Route path="education" element={<Education/>}/>
+    <Route path="unicorn" element={<Unicorn/>}/>
+    <Route path="breeding" element={<Breeding/>}/>
+    <Route path="mangrove" element={<Mangrove/>}/>
     <Route path ="projects/*" element={<Projects/>}/>
     <Route path="projects/login" element={<ProjectsLogin />}/>
-    <Route path="projects/register" element={<ProjectsRegister />}/>
+    {/* <Route path="projects/register" element={<ProjectsRegister />}/> */}
     <Route path="projects/create" element={<CreatePost />}/>
-    <Route path="projects/post/:id" element={<Postpage/>}/>
-    <Route path="projects/edit/:id" element={<EditPost/>}/>
-    <Route path="projects/mangrove" element={<Mangrove/>}/>
-    <Route path="projects/education" element={<Education/>}/>
-    <Route path="projects/breeding" element={<Breeding/>}/>
+    <Route path="/post/:id" element={<Postpage/>}/>
+    <Route path="projects/edit/" element={<EditPost/>}/>
+  
        </Route>  
   </Routes>
-  </UserContextProvider>
+  </AuthContexProvider>
 
   );
 }

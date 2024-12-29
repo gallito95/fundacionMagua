@@ -1,0 +1,104 @@
+.add{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+
+
+.editorContent{
+    max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  
+  h3{
+    color: black;
+    font-size: 2rem;
+  }
+
+  input{
+    width: 100%;
+  }
+
+  .editorContainer{
+    margin-top: 20px;
+    height: 300px;
+    overflow: scroll;
+    border: 1px solid lightgray;
+  }
+  
+}
+
+.editCategoryContainer{
+    margin: 0 auto;
+    
+    h3{ 
+        color:black;
+        font-size: 2rem;  
+        text-align: center; 
+        margin-bottom: 2rem;
+    }
+    .cat {
+        display: flex;
+        align-items: center;
+        justify-content: center; /* Flex-Start, damit die Abstände einheitlich bleiben */
+        margin-bottom: 1rem;
+    
+        input {
+          flex-shrink: 0; /* Verhindert, dass der Button skaliert wird */
+          margin-right: 1rem; /* Einheitlicher Abstand zwischen Button und Label */
+          width: 50px;
+        }
+
+        input[type="radio"] {
+            transform: scale(0.8); /* Größere Buttons für bessere Sichtbarkeit */
+        }
+    
+        label {
+          font-size: 1.6rem;
+          flex: 1; /* Füllt den verfügbaren Platz gleichmäßig */
+          text-align: left; /* Option: Kann auch zentriert werden */
+          white-space: nowrap; /* Verhindert Zeilenumbrüche bei langen Labels */
+        }
+      }
+
+}
+
+
+.small-image-preview {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+  }
+  
+  .image-upload-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .item {
+    h1{
+        color:black;
+    }
+  }
+
+
+  @media screen and (min-width:480px){
+    
+  }
+  @media screen and (min-width:768px){
+    .add{
+        flex-direction: row;
+    }
+    }
+ 
+
+  @media screen and (min-width:1024px){
+
+  }

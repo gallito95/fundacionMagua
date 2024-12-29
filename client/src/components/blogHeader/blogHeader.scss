@@ -1,0 +1,117 @@
+
+
+   .blogHeader{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+    align-items: center;
+    margin-top: 20px;
+}
+.ourprojects{
+    text-decoration: underline;
+   }
+
+
+   .categoryContainer {
+    position: absolute;
+    left: 20px;
+    background-color: rgba(255, 255, 255, 0.6);  /* Transparenter Hintergrund */
+    padding: 20px;
+    border-radius: 12px;  /* Abgerundete Ecken */
+    backdrop-filter: blur(8px);  /* Leichte Unschärfe im Hintergrund */
+    border: 2px solid rgba(0, 0, 0, 0.1);  /* Dezenter Rand */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Leichter Schatten */
+    max-width:90%;
+    
+    h3 {
+      color: #004d99;  /* Blau für Text */
+      font-size: 2.4rem;
+      margin: 14px 0;
+      font-weight: bold;
+    }
+  }
+  
+  .blogLinkContainer {
+    display: grid;
+    max-width: 300px;
+    border-radius: 12px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin: 0 auto;
+    align-items: center;
+    border: none;
+    padding: 12px;
+    background-color: rgba(255, 255, 255, 0.8); /* Halbtransparenter Hintergrund */
+    
+    a {
+      color: #003366;  /* Dunkelblau */
+      font-size: 1.8rem;
+      text-decoration: none;
+      font-weight: bold;
+      transition: transform 0.3s ease;
+    }
+  
+    a:hover {
+      color: #00b4d8;  /* Türkis für Hover-Effekt */
+      transform: scale(1.1); /* Links vergrößern bei Hover */
+    }
+  }
+  
+
+
+a:last-child {
+    margin-right: 0;                  /* Entfernt den rechten Abstand beim letzten Link */
+}
+
+.blogHeader a{
+    color: black;
+    font-weight: bold;
+
+}
+.blogHeader__nav{
+ background-color: white;
+ border-radius: 5px;
+}
+
+.blogHeader a.logo{
+    font-weight: bold;
+    font-size: 2.6rem;
+}
+
+.blogHeader nav{
+    display: flex;
+    gap:15px;
+}
+
+@media screen and (min-width:480px){
+
+}
+
+
+
+@media screen and (min-width:768px){
+    .blogLinkContainer{
+        max-width: 400px;
+        grid-template-columns: repeat(3, 1fr); 
+    }
+
+    .categoryContainer{
+        h3{
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+    }
+}
+
+@media screen and (min-width:1024px){
+    .blogLinkContainer{
+        max-width: 1000px;
+        grid-template-columns: repeat(3, 1fr); 
+
+        a{
+            font-size: 2rem;
+            padding: 0 2rem;
+
+        }
+    }
+}

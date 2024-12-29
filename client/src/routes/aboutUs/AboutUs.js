@@ -1,5 +1,5 @@
 import React from 'react'
-import './AboutUs.css'
+import './AboutUs.scss'
 import Footer from '../../components/footer/Footer'
 import Team from '../../components/team/team'
 import FoundationImage from '../../images/foundation image.png'
@@ -8,9 +8,10 @@ const AboutUS = () => {
 
   return (
  
-    <form >
-    <h2 className="head__title">THE FOUNDATION</h2>
-    <div className='aboutUS__container'>
+    <form data-aos="fade-right" data-aos-duration="2000" >
+    <h2 className="aboutUS__title">The Foundation</h2>
+    <div className='aboutUS__container' >
+    <img  className="aboutUS__image" src={FoundationImage }  alt="not working"/>
       <p className='aboutUS__content'>
       The Magua Ecological Foundation is a social, educational and scientific organization 
     of Dominican nationality that carry out the management of natural resources through 
@@ -24,8 +25,8 @@ const AboutUS = () => {
     in Sosua, Costambar and Punta Rucia.
      
      </p>
-     <img  className="aboutUS__Image" src={FoundationImage }  alt="not working"/>
-    </div>
+     </div>
+
     <Team/>
     <Footer/>
       </form>

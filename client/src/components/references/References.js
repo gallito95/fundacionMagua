@@ -9,7 +9,7 @@ import Women1 from '../../images/women1.jpg'
 import Women2 from '../../images/women2.jpg'
 import Men1 from '../../images/men3.jpg'
 import Men2 from '../../images/men4.jpg'
-import "./references.css"
+import "./references.scss"
 
 const References = () => {
 
@@ -43,8 +43,6 @@ const References = () => {
      info: "we made 'coral cakes ' with micro fragments of corals that were rescued and treated for a coral disease, we placed them in the ocean nursery where they will fuse into a mature coral colony and reproduce. So proud to be a 'coral dad'"
     },
   ];
-
-
 
     // List of all cars satisfing all the filters
   const [filteredList, setFilteredList] = useState(carList);
@@ -84,11 +82,11 @@ function previousPerson(){
       <header className="block__header" >
         <h2 className="block__headline "id="referencias">Volunteer References</h2>
       </header>
-      <div className="container">
+      <div className="container" data-aos="fade-up" data-aos-duration="1000">
         <div className="card testimonial">
        
         {filteredList.filter(item => item.id === currentItem).map((item, index) => (
-           <div className="grid grid--1x2" key={index}>
+           <div className="grid_References" key={index}>
             <div className="testimonial__image">
             <img  src={item.img} alt="car-img" />
              <span className="icon-container icon-container--accent">
@@ -101,21 +99,19 @@ function previousPerson(){
             <p className="quote__text">{item.info}</p>
             <footer>
                 <div className="media media__reference">
-                  <div className="media__image">
-                    <svg className="icon icon--primary quote__line">
-                      <FontAwesomeIcon icon={faMinus}/>
+                  <div className="quote__Container">
+                  <svg className=" icon quote__line">
+                      <FontAwesomeIcon className="quote-icon" icon={faMinus}/>
                     </svg>
-                  </div>
-                  <div className="media__body">
-                  <h3 className="media__title quote__author">{item.name}</h3>
+                  <h3 className="quote__author"> {item.name}</h3>
                   </div>
                   </div>
                  <div className="button-container">
                   <button className="prev-btn" >
-                  <FontAwesomeIcon icon={faChevronLeft} onClick={previousPerson} />
+                  <FontAwesomeIcon className="button-icon" icon={faChevronLeft} onClick={previousPerson} />
                   </button>
                   <button className="next-btn" >
-                    <FontAwesomeIcon icon={faChevronRight} onClick={nextPerson}/>
+                    <FontAwesomeIcon className="button-icon" icon={faChevronRight} onClick={nextPerson}/>
                 </button>
                 </div>
               </footer>

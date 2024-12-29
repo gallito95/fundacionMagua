@@ -1,0 +1,42 @@
+.fact__Container{
+    background:
+    linear-gradient(to bottom, #ffffff, #d6ecff);
+    padding: 5px 15px;
+    margin-left: -2rem;
+    border-radius: 10%;
+    font-family: "Nanum Gothic", sans-serif;
+
+    max-width: 200px;
+
+    .fact__Headline{
+        color: rgb(255, 150, 13);
+    
+        text-align: center;
+        font-size: 2rem;
+    }
+
+    .fact__Content{
+        text-align: center;
+        font-size: 1.6rem;
+    }
+}
+
+@media screen and (min-width:768px) {
+    .fact__Container{
+        max-width: 300px;
+    
+        .fact__Headline{
+            color: rgb(255, 150, 13);
+        
+            text-align: center;
+            font-size: 2.2rem;
+        }
+    
+        .fact__Content{
+            text-align: center;
+            font-size: 1.8rem;
+        }
+    }
+    
+    
+}

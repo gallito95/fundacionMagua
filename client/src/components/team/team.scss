@@ -1,0 +1,122 @@
+.team_Container{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.team_Headline{
+    text-align: center;
+    color: black;
+    font-size: 3rem;
+    margin-top: 50px;
+}
+
+.team_Image{
+ 
+    margin: 50px;
+    box-sizing: border-box;
+    max-width: 300px;
+}
+
+.sponsor_Container{
+    display: flex;
+    justify-content: space-around;
+    margin: 0 20px;
+}
+
+.sponsor_Headline{
+    text-align: center;
+    color: black;
+    font-size: 2.5rem;
+    margin: 50px 0;
+}
+
+.sponsor_Image{
+    flex: 1 1 calc(25%);
+}
+
+.team_Image >p {
+    text-align: center;
+    font-weight: bold;
+}
+
+@media screen and (min-width:723px) and (max-width: 1200px) {
+    .team_Image{
+        margin:25px
+    }
+}
+
+@media screen and (max-width:1000px){
+    .team_Image{
+        max-width: 200px;
+    }
+}
+
+@media screen and (min-width: 600px) and (max-width: 722px) {
+    .team_Container{
+        margin-bottom: 50px;
+    }
+    
+    .team_Headline {
+        font-size: 2.5rem;
+    }
+
+    .team_Image{
+        margin:25px
+    }
+}
+
+@media screen and (min-width:500px) and (max-width:599px){
+    .team_Headline{
+        font-size:2rem;
+    }
+
+    .team_Image{
+        margin:25px
+    }
+}
+
+@media screen and (max-width:499px) {
+  .team_Headline{
+    font-size: 2rem;
+  margin-top: 8rem;
+  }
+
+  .team_Image{
+    margin:25px
+}
+}
+
+@media screen and (min-width:768px){
+    .sponsor_Container{
+        max-width: 700px;
+        margin: 0 auto 5rem;
+    }
+
+    .sponsor_Headline{
+        font-size: 3rem;
+    }
+}
+
+@media screen and (min-width:1024px){
+    .team_Headline{
+        font-size: 4rem;
+    }
+
+    .sponsor_Headline{
+        font-size: 4rem;
+    }
+
+    .sponsor_Container{
+        max-width: 800px;
+    }
+}
+
+@media screen and (min-width:1280px) {
+    .sponsor_Container{
+        max-width: 1000px;
+    }
+}
+

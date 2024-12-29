@@ -1,72 +1,29 @@
 import React, { useContext } from 'react'
 import {Link, redirect} from 'react-router-dom'
 import { useEffect } from 'react'
-import { UserContext } from '../../UserContext'
-import './blogHeader.css'
 
-const blogHeader = 
-  ({ isBlogPage }) => {
-    const { userInfo, setUserInfo } = useContext(UserContext);
-  
-    console.log('isBlogPage (blog.js):', true);
-  useEffect(() => {
-    fetch('http://localhost:4000/projects/profile' , {
-      credentials: 'include', 
-    }).then(response => {
-     response.json().then(userInfo =>{
-       setUserInfo(userInfo);
-     })
+import './blogHeader.scss'
 
-    });
-  }, []);
-
-
-  function logout() {
-    fetch('http://localhost:4000/projects/logout', {
-      credentials: 'include',
-      method: 'POST',
-    })
-    .then(response => {
-      if (response.ok) {
-        // Wenn die Abmeldung erfolgreich war, setze userInfo auf null
-        setUserInfo(null);
-        
-        // Führe den Redirect durch
-        window.location.href = 'http://localhost:3000/projects';
-      } else {
-        // Handle Fehler hier, falls erforderlich
-        console.error('Logout fehlgeschlagen');
-      }
-    })
-    .catch(error => {
-      // Handle Netzwerkfehler oder andere Ausnahmen hier
-      console.error('Fehler beim Logout:', error);
-    });
-  }
-
-  const username = userInfo?.Username;
-
-  
+const blogHeader = () => {
+    
 
   return (
-    <header className={`blogHeader ${isBlogPage ? 'whiteText' : ''}`} >
-            <Link to="/projects" className='ourprojects'>Our Projects</Link>
-            {/* <nav className='blogHeader__nav'>
-              {username && (
-                <>
-                <Link to="/projects/create"> Create new post</Link>
-                <a onClick={logout}> Logout</a>
-                </>
-              )}
-              {!username &&
-              (
-                <>
-                 <Link to="/projects/login">Login</Link> 
-              <Link to="/projects/register">Register</Link>
-                </>
-              )}
-             
-            </nav> */}
+    <header >
+            <div className='blogHeaderContainer'>
+             <div className='categoryContainer'>
+            <h3>Categories:</h3>
+            <div className="blogLinkContainer">
+            <Link to="/projects/"> All </Link>
+            <Link to="/projects/?cat=education"> Education </Link>
+            <Link to="/projects/?cat=mangrove"> Mangrove</Link>
+            <Link to="/projects/?cat=scuba">Scuba Diving</Link>
+            <Link to="/projects/?cat=unicorn">Project Unicorn</Link>
+            <Link to="/projects/?cat=corals">Corals</Link>
+            <Link to="/projects/?cat=other">Other</Link>
+            </div>
+            </div>
+            </div>
+           
           </header>
   )
 }

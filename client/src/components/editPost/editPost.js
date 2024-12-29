@@ -1,78 +1,208 @@
-import { useEffect, useState } from "react";
-import Editor from "../blogEditor/blogEditor";
-import { useParams } from "react-router";
-import { Navigate } from "react-router";
-import './editPost.css'
+import ReactQuill from "react-quill";
+import 'react-quill/dist/quill.snow.css';
+import {useState} from "react";
+import { useLocation } from "react-router-dom";
+import {useNavigate} from "react-router-dom";
+import '../../components/createPost/createPost.scss'
+import axios from 'axios'
+import "./editPost.scss"
+
+
 const EditPost = () => {
      
-    const {id} = useParams();
-    const [title,setTitle] = useState('');
-    const [summary,setSummary] = useState('');
-    const [content,setContent] = useState('');
-    const [files, setFiles] = useState('');
-    const [redirect,setRedirect] = useState(false);
-  
+  const state = useLocation().state;
+  const [title, setTitle] = useState(state?.title || "");
+  const [value, setValue] = useState(state?.desc || "");
+  const [file, setFile] = useState(null);
+  const [cat, setCat] = useState(state?.cat || "");
+  const [existingImg, setExistingImg] = useState(state?.img || "");
 
-    useEffect(() => {
-        fetch('http://localhost:4000/projects/post/'+id)
-        .then(response => {
-          response.json().then( postInfo => {
-            setTitle(postInfo.title);
-            setContent(postInfo.content);
-            setSummary(postInfo.summary);
+  const navigate = useNavigate()
 
-          })
-        })
-    }, [])
-    
-   
-    async function updatePost(e) {
-        e.preventDefault();
-        const data = new FormData();
-        data.set('title', title);
-        data.set('summary', summary);
-        data.set('content', content);
-        data.set('id', id);
-        if(files?.[0]){
-            data.set('file', files?.[0]);
-        }
-        
-      const response = await fetch('http://localhost:4000/projects/post/' , {
-        method: 'PUT',
-        body: data,
-        credentials: 'include',
-
-      });
-      if(response.ok){
-         setRedirect(true);
-      }
-
-   
+  const upload = async () => {
+    if(!file) return ""
+    try {
+      const formData = new FormData()
+      formData.append("file", file)
+      const res = await axios.post("https://ecomagua.org/api/upload", formData);
+      return res.data;
+    } catch (err) {
+      console.log(err);
+      console.log("picture upload not working")
     }
+  };
 
-    if(redirect) {
-        return <Navigate to={'/projects/post/'+id} />
-      }
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const imgUrl = file ? await upload() : existingImg; // Nutze vorhandenes Bild, falls kein neues hochgeladen wird
+  
+    try {
+      if (state) {
+        await axios.put(`https://ecomagua.org/api/posts/${state.id}`, {
+          title,
+          desc: value,
+          cat,
+          img: imgUrl, // Sende neues oder vorhandenes Bild
+        });
+      } 
+      navigate("/projects");
+    } catch (err) {
+      console.log(err);
+      console.log("submit not working");
+    }
+  };
 
- return(
-    <div className="editPost">
-     <form onSubmit={updatePost}>
-        <input type="title" 
-        placeholder={'Title'} 
-        value={title} 
-        onChange={e => setTitle(e.target.value)}/>
-        <input type="summary" 
-        placeholder={'Summary'}
-        value={summary}
-        onChange={e => setSummary(e.target.value)}/>
-        <input type="file" 
-        onChange={e => setFiles(e.target.files)} />
-        <Editor className = "reactQuill" value={content} onChange={setContent} />
-        <button> Update Post </button>
-     </form>
+  const modules = {
+    toolbar: [
+      [{ header: [1, 2, 3, false] }],
+      ['bold', 'italic', 'underline', 'strike'],
+      [{ list: 'ordered' }, { list: 'bullet' }],
+      ['link', 'image'],
+    ],
+    clipboard: {
+      matchVisual: false, // Verhindert zusätzliche Zeilenumbrüche
+    },
+  };
+
+  return (
+    <div className="add">
+      <div className="editorContent">
+        <h3> Title:</h3>
+        <input
+          type="text"
+          value={title}
+          placeholder="Title"
+          onChange={(e) => setTitle(e.target.value)}
+        />
+        <div className="editorContainer">
+        <ReactQuill
+            className="editor"
+            theme="snow"
+            value={value}
+            onChange={setValue}
+            modules={modules} // Modules hier einbinden
+          />
+        </div>
+      </div>
+      <div className="menu">
+      <div className="item">
+    <h1>Publish</h1>
+    <span>
+      <b>Status: </b> Draft
+    </span>
+    <span>
+      <b>Visibility: </b> Public
+    </span>
+    <div className="image-upload-container">
+    {existingImg && !file && (
+    <img
+      src={`http://ecomagua.org:8800/api/uploads/${existingImg}`}
+      alt="Current"
+      className="small-image-preview"
+    />
+  )}
+
+  {/* Vorschau des neuen Bildes */}
+  {file && (
+    <img
+      src={URL.createObjectURL(file)}
+      alt="New"
+      className="small-image-preview"
+    />
+  )}
+
+  <input
+    style={{ display: "none" }}
+    type="file"
+    id="file"
+    name=""
+    onChange={(e) => {
+      const selectedFile = e.target.files[0];
+      setFile(selectedFile); // Neues Bild setzen
+      setExistingImg(null); // Altes Bild entfernen
+    }}
+  />
+      <label className="file" htmlFor="file">
+        Upload Image
+      </label>
+    </div>
+    <div className="buttons">
+      <button onClick={handleSubmit}>Publish</button>
+    </div>
+  </div>
+
+        <div className="editCategoryContainer">
+          <h3>Category</h3>
+          <div className="cat">
+            <input
+                type="radio"
+                checked={cat === "education"}
+                name="cat"
+                value="education"
+                id="education"
+                onChange={(e) => setCat(e.target.value)}
+              />
+              <label htmlFor="education">Education</label>
+          </div>
+          <div className="cat">
+            <input
+                type="radio"
+                checked={cat === "mangrove"}
+                name="cat"
+                value="mangrove"
+                id="mangrove"
+                onChange={(e) => setCat(e.target.value)}
+              />
+              <label htmlFor="mangrove">Mangrove</label>
+          </div>
+          <div className="cat">
+            <input
+              type="radio"
+              checked={cat === "scuba"}
+              name="cat"
+              value="scuba"
+              id="scuba"
+              onChange={(e) => setCat(e.target.value)}
+            />
+            <label htmlFor="scuba">Scuba Diving</label>
+          </div>
+          <div className="cat">
+            <input
+              type="radio"
+              checked={cat === "unicorn"}
+              name="cat"
+              value="unicorn"
+              id="unicorn"
+              onChange={(e) => setCat(e.target.value)}
+            />
+            <label htmlFor="unicorn">Project Unicorn</label>
+          </div>
+          <div className="cat">
+          <input
+                type="radio"
+                checked={cat === "corals"}
+                name="cat"
+                value="corals"
+                id="corals"
+                onChange={(e) => setCat(e.target.value)}
+              />
+              <label htmlFor="corals">Corals</label>
+          </div>
+          <div className="cat">
+            <input
+              type="radio"
+              checked={cat === "other"}
+              name="cat"
+              value="other"
+              id="other"
+              onChange={(e) => setCat(e.target.value)}
+            />
+            <label htmlFor="other">Other</label>
+          </div>
+        </div>
+      </div>
     </div>
   )
-    
 }
 
 export default EditPost
