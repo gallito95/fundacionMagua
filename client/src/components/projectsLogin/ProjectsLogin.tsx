@@ -1,22 +1,29 @@
 import React, { useContext } from 'react'
-import BlogHeader from '../blogHeader/blogHeader'
+import BlogHeader from '../blogHeader/BlogHeader.tsx'
 import { useState } from 'react'
 import { Navigate } from 'react-router'
-import  './projectsLogin.css'
-import { UserContext } from '../../UserContext'
+import  './ProjectsLogin.scss'
+import { UserContext } from '../../UserContext.js'
 
-const blogLogin = () => {
+type LoginStates = {
+  username: string;
+  password: string;
+  redirect; boolean;
 
-const [Username, setUsername] = useState("")
-const [Password , setPassword] = useState("")
-const [Redirect, setRedirect] = useState(false)
-const {setUserInfo} = useContext(UserContext)
+}
+
+const ProjectsLogin = () => {
+
+const [username, setUsername] = useState("")
+const [password , setPassword] = useState("")
+const [redirect, setRedirect] = useState(false)
+const {userInfo, setUserInfo} = useContext(UserContext)
  
-async function login (e) {
+async function login (e: React.FormEvent): Promise<void>  {
 e.preventDefault();
 const response = await fetch('http://localhost:4000/projects/login', {
     method: 'POST',
-    body: JSON.stringify({Username, Password}), 
+    body: JSON.stringify({username, password}), 
     headers: {'Content-type' : 'application/json'},
     credentials: 'include', //cookies speichern
    });
@@ -33,7 +40,7 @@ const response = await fetch('http://localhost:4000/projects/login', {
    }
 }
 
-if(Redirect) {
+if(redirect) {
   return <Navigate to={'/projects'} />
 }
 
@@ -47,13 +54,13 @@ return (
         <input 
         type="text" 
         placeholder='Username'
-        value={Username}
+        value={username}
         onChange={e => setUsername(e.target.value)}/>
         
         <input 
         type="password" 
         placeholder='Password'
-        value={Password}
+        value={password}
         onChange={e=> setPassword(e.target.value)}/>
         
         <button className='loginButton'> Login</button>
@@ -64,4 +71,4 @@ return (
   )
 }
 
-export default blogLogin
+export default ProjectsLogin

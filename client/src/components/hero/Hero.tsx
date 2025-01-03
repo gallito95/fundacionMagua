@@ -1,6 +1,6 @@
 import React from 'react'
-import './hero.css'
-import Factpanel from '../factPanel/factPanel'
+import './Hero.scss'
+import Factpanel from '../factPanel/FactPanel.tsx'
 
 
 const Hero = () => {

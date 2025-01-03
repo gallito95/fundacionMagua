@@ -1,13 +1,18 @@
-import { React, useState, useEffect } from 'react';
+import React, {useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import axios from "axios";
-import '../ProjectList/projectList.scss';
-import Project3 from '../../images/mangrove1500.webp';
-import Project5 from '../../images/unicorn.jpg';
-import Project1 from '../../images/project1.jpg';
+import '../ProjectList/ProjectList.scss';
+
+
+type Posts = {
+  id: number;
+  title: string;
+  img: string;
+  desc: string
+}
 
 const ProjectList = () => {
-  const [posts, setPosts] = useState([]);
+  const [posts, setPosts] = useState<Partial<Posts>[]>([]);
   const cat = useLocation().search;
 
   useEffect(() => {
@@ -24,7 +29,7 @@ const ProjectList = () => {
   
 
   // Funktion zum Kürzen des Texts auf 300 Zeichen
-  const truncateText = (text, maxLength) => {
+  const truncateText = (text:string | undefined, maxLength) => {
     if (!text) return '';
     return text.length > maxLength ? text.slice(0, maxLength) + '...' : text;
   };

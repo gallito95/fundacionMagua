@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom"
 import axios from "axios"
 import { AuthContext } from "../../context/authContext"
 import './login.scss'
-import Footer from '../../components/footer/Footer';
+import Footer from '../../components/footer/Footer.tsx';
 
 const Login = () => {
 

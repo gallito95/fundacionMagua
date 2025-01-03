@@ -3,7 +3,7 @@ import References from '../../components/references/References'
 import CoralVolunteering from '../../images/coralVolunteering.jpeg'
 import ScubaVolunteering from '../../images/ScubadiveVolunteer.jpg'
 
-import Footer from '../../components/footer/Footer'
+import Footer from '../../components/footer/Footer.tsx'
 
 
 

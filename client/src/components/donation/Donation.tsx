@@ -2,17 +2,20 @@ import React, { useEffect, useState, useRef } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
-import './donation.scss';
+import { CreateOrderData, CreateOrderActions } from "@paypal/react-paypal-js";
+import './Donation.scss';
 import ReactSlider from 'react-slider';
 
-const Donation = () => {
-  const [showPayPalButton, setShowPayPalButton] = useState(false);
-  const [donationAmount, setDonationAmount] = useState('10');
-  const donationAmountRef = useRef(donationAmount);
+
+
+const Donation: React.FC = () => {
+  const [showPayPalButton, setShowPayPalButton] = useState<boolean>(false);
+  const [donationAmount, setDonationAmount] = useState<string>('10');
+  const donationAmountRef = useRef<string>(donationAmount);
 
   useEffect(() => {
     AOS.init({
-      duration: 2000
+      duration: 2000,
     });
   }, []);
 
@@ -29,15 +32,22 @@ const Donation = () => {
     setShowPayPalButton(false);
   };
 
-  const createOrder = (data, actions) => {
+  const createOrder = (data: { purchase_units: { amount: { value: string } }[] }, actions: { order: { create: Function } }) => {
     return actions.order.create({
       purchase_units: [
         {
           amount: {
-            value: donationAmountRef.current, // Use the current value of donationAmount
+            value: donationAmountRef.current, 
           },
         },
       ],
+    });
+};
+
+  const onApprove = (data: any, actions: any) => {
+    return actions.order.capture().then((details) => {
+      alert('Thank you for your donation!');
+      // Weitere Aktionen, wie das Weiterleiten zu einer Dankeseite
     });
   };
 
@@ -54,38 +64,32 @@ const Donation = () => {
             <PayPalScriptProvider options={{ "client-id": "AajWPfFBybu7psc590FmvWbTr19YXnkv0H5MR1EBYY0EX2SPGRy9UIHfhl-DeR9U5obS7jIFeE_wIvnX" }}>
               <PayPalButtons
                 createOrder={createOrder}
-                onApprove={(data, actions) => {
-                  return actions.order.capture().then(function (details) {
-                    alert('Thank you for your donation!');
-                    // Weitere Aktionen, wie das Weiterleiten zu einer Dankeseite
-                  });
-                }}
+                onApprove={onApprove}
               />
             </PayPalScriptProvider>
             <div>
               <label className='donation_Label'> Enter Donation Amount:</label>
-            
-              <div className='slider-container'>
-          <ReactSlider
-            className="horizontal-slider"
-            thumbClassName="thumb"
-            trackClassName="track"
-            min={5}
-            max={300}
-            value={donationAmount}
-            onChange={(value) => setDonationAmount(value)}
-            renderThumb={(props, state) => (
-              <div {...props} className="thumb">
-                {state.valueNow}$
-              </div>
-            )}
-          />
-          <div className="slider-labels">
-            <span>5$</span>
-            <span>300$</span>
-          </div>
-        </div>
 
+              <div className='slider-container'>
+                <ReactSlider
+                  className="horizontal-slider"
+                  thumbClassName="thumb"
+                  trackClassName="track"
+                  min={5}
+                  max={300}
+                  value={parseInt(donationAmount, 10)}
+                  onChange={(value: number) => setDonationAmount(value.toString())}
+                  renderThumb={(props, state) => (
+                    <div {...props} className="thumb">
+                      {state.valueNow}$
+                    </div>
+                  )}
+                />
+                <div className="slider-labels">
+                  <span>5$</span>
+                  <span>300$</span>
+                </div>
+              </div>
             </div>
             <button className="close_Button" onClick={handleClosePayPal}>Close</button>
           </div>
@@ -98,4 +102,3 @@ const Donation = () => {
 };
 
 export default Donation;
-

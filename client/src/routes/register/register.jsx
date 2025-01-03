@@ -2,7 +2,7 @@ import { Link, useNavigate } from "react-router-dom"
 import { useState } from "react"
 import axios from "axios"
 import './register.scss'
-import Footer from '../../components/footer/Footer';
+import Footer from '../../components/footer/Footer.tsx';
 
 const Register = () => {
 

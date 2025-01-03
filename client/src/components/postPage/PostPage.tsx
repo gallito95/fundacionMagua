@@ -1,13 +1,19 @@
-import { useContext, useEffect, useState } from "react";
-import BlogHeader from "../blogHeader/blogHeader";
-import { AuthContext } from "../../context/authContext";
+import React, { useContext, useEffect, useState } from "react";
+import BlogHeader from "../blogHeader/BlogHeader.tsx";
+import { AuthContext } from "../../context/authContext.js";
 import { useLocation, useNavigate } from "react-router";
-import './postPage.scss'
+import './PostPage.scss'
 import axios from "axios"
 
+type Post = {
+  title: string;
+  desc: string;
+  img: string;
+
+}
 
 const Postpage = () => {
-  const [post, setPost] = useState({})
+  const [post, setPost] = useState<Partial<Post>>({})
   const { currentUser } = useContext(AuthContext);
 
 
@@ -68,7 +74,7 @@ const Postpage = () => {
     </div>
   
     <div className="postPagecontent">
-      <p dangerouslySetInnerHTML={{ __html: post.desc }}></p>
+      <p dangerouslySetInnerHTML={{ __html: post.desc || "" }}></p>
       </div>
    </div>
   );

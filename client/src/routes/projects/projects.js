@@ -3,9 +3,9 @@ import { useContext } from 'react'
 import './projects.scss'
 import { AuthContext } from '../../context/authContext'
 import { Route, Routes } from 'react-router-dom'
-import ProjectList from '../../components/ProjectList/ProjectList'
-import BlogHeader from '../../components/blogHeader/blogHeader'
-import Footer from '../../components/footer/Footer'
+import ProjectList from '../../components/ProjectList/ProjectList.tsx'
+import BlogHeader from '../../components/blogHeader/BlogHeader.tsx'
+import Footer from '../../components/footer/Footer.tsx'
 
 
 const blog = () => {

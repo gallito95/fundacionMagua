@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import {useLocation, Link } from 'react-router-dom';
-import ProjectFeature from '../Projectfeatures/ProjectFeature';
+import ProjectFeature from '../Projectfeatures/ProjectFeature.tsx';
 import Project3 from '../../images/mangrove1500.webp';
 import Project5 from '../../images/unicorn.jpg';
 import Project1 from '../../images/project1.jpg';

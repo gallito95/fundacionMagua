@@ -1,32 +1,33 @@
 import ReactQuill from "react-quill";
+import React ,{useState} from "react";
 import 'react-quill/dist/quill.snow.css';
-import {useState} from "react";
-import { useLocation } from "react-router-dom";
 import {useNavigate} from "react-router-dom";
-import './createPost.scss'
 import axios from 'axios'
+import './CreatePost.scss'
 
-const CreatePost = () =>  {
-  const [value, setValue] = useState( "");
-  const [title, setTitle] = useState("");
-  const [file, setFile] = useState(null);
-  const [cat, setCat] = useState( "");
+
+const CreatePost: React.FC = () =>  {
+  const [value, setValue] = useState<string>( "");
+  const [title, setTitle] = useState<string>("");
+  const [file, setFile] = useState<File | null>(null);
+  const [cat, setCat] = useState<string>( "");
   
   const navigate = useNavigate()
 
-  const upload = async () => {
+  const upload = async (): Promise<string | null> => {
       if(!file) return ""
       try {
         const formData = new FormData()
         formData.append("file", file)
         const res = await axios.post("https://ecomagua.org/api/upload", formData);
-        return res.data;
+        return res.data || null;
       } catch (err) {
         console.log(err);
+        return null
       }
     };
   
-    const handleSubmit = async (e) => {
+    const handleSubmit = async (e: React.FormEvent): Promise<void> => {
       e.preventDefault();
 
       const imgUrl = await upload();
@@ -99,7 +100,7 @@ const CreatePost = () =>  {
     id="file"
     name=""
     onChange={(e) => {
-      const selectedFile = e.target.files[0];
+      const selectedFile = e.target.files ? e.target.files[0] : null;
       setFile(selectedFile); // Neues Bild setzen
     }}
   />

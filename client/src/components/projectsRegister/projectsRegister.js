@@ -1,5 +1,5 @@
 import React from 'react'
-import BlogHeader from '../blogHeader/blogHeader'
+import BlogHeader from '../blogHeader/BlogHeader.tsx'
 import { useState } from 'react'
 import './projectRegister.css'
 

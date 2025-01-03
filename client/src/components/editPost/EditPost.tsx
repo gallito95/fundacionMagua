@@ -1,22 +1,31 @@
 import ReactQuill from "react-quill";
 import 'react-quill/dist/quill.snow.css';
-import {useState} from "react";
+import React, {useState} from "react";
 import { useLocation } from "react-router-dom";
 import {useNavigate} from "react-router-dom";
-import '../../components/createPost/createPost.scss'
+import '../../components/createPost/CreatePost.scss'
 import axios from 'axios'
-import "./editPost.scss"
+import "./EditPost.scss"
 
+
+type EditPostStates ={
+  id: number;
+  title: string | undefined;
+  desc: string | undefined;
+  file: File | null ;
+  cat: string |undefined;
+  img : string | null;
+  state: string
+}
 
 const EditPost = () => {
      
-  const state = useLocation().state;
-  const [title, setTitle] = useState(state?.title || "");
-  const [value, setValue] = useState(state?.desc || "");
-  const [file, setFile] = useState(null);
-  const [cat, setCat] = useState(state?.cat || "");
-  const [existingImg, setExistingImg] = useState(state?.img || "");
-
+  const state = useLocation().state as EditPostStates | undefined;
+  const [title, setTitle] = useState<string | undefined>(state?.title || "");
+  const [value, setValue] = useState<string | undefined>(state?.desc || "");
+  const [file, setFile] = useState<File |null>(null);
+  const [cat, setCat] = useState<string |undefined>(state?.cat || "");
+  const [existingImg, setExistingImg] = useState<string | null>(state?.img || "");
   const navigate = useNavigate()
 
   const upload = async () => {
@@ -32,7 +41,7 @@ const EditPost = () => {
     }
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e:React.FormEvent): Promise<void>  => {
     e.preventDefault();
     const imgUrl = file ? await upload() : existingImg; // Nutze vorhandenes Bild, falls kein neues hochgeladen wird
   
@@ -117,9 +126,12 @@ const EditPost = () => {
     id="file"
     name=""
     onChange={(e) => {
-      const selectedFile = e.target.files[0];
+      const files = e.target.files
+      if (files && files[0]){
+      const selectedFile = files[0];
       setFile(selectedFile); // Neues Bild setzen
       setExistingImg(null); // Altes Bild entfernen
+    }
     }}
   />
       <label className="file" htmlFor="file">

@@ -1,5 +1,5 @@
 import React from 'react'
-import './factPanel.scss'
+import './FactPanel.scss'
 import facts from './facts.json';
 import { motion } from 'framer-motion';
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import  "./projectFeature.scss"
+import  "./ProjectFeature.scss"
 
 const ProjectFeature = ({ title, description, image, link }) => {
   return (

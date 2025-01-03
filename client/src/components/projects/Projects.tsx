@@ -1,10 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import ProjectList from '../ProjectList/ProjectList'
-import './projects.css'
+import './Projects.scss'
 
 
-const Philosophy = () => {
+const Projects = () => {
 
 
   return (
@@ -21,4 +21,4 @@ const Philosophy = () => {
   )
 }
 
-export default Philosophy
+export default Projects

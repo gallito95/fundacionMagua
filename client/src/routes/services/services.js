@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import '@fortawesome/fontawesome-free/css/all.css';
-import Footer from '../../components/footer/Footer';
+import Footer from '../../components/footer/Footer.tsx';
 import './services.scss'
 import ScubadiveCourses from '../../images/ScubadiveCourses.jpeg'
 import CoralReforestation from '../../images/snorkel.jpg'

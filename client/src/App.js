@@ -5,15 +5,11 @@ import AboutUs from "./routes/aboutUs/AboutUs"
 import Services from "./routes/services/services"
 import Projects from "./routes/projects/projects.js"
 import Volunteering from "./routes/volunteering/volunteering.js"
-import ProjectsLogin from './components/projectsLogin/projectsLogin'
+import ProjectsLogin from './components/projectsLogin/ProjectsLogin.tsx'
 import ProjectsRegister from './components/projectsRegister/projectsRegister'
-import CreatePost from "./components/createPost/createPost"
-import Postpage from "./components/postPage/postPage"
-import EditPost from "./components/editPost/editPost"
-import Mangrove from "./components/articles/mangrove/mangrove.jsx"
-import Breeding from "./components/articles/breeding/breeding.jsx"
-import Education from "./components/articles/education/education.jsx"
-import Unicorn from "./components/articles/unicorn/unicorn.jsx"
+import CreatePost from "./components/createPost/CreatePost.tsx"
+import Postpage from "./components/postPage/PostPage.tsx"
+import EditPost from "./components/editPost/EditPost.tsx"
 
 import Register from "./routes/register/register"
 import Login from "./routes/login/login"
@@ -43,10 +39,6 @@ function App() {
     <Route path ="volunteering" element={<Volunteering/>}/>
     {/* <Route path="register" element={<Register/>}/> */}
     <Route path="login" element={<Login/>}/>
-    <Route path="education" element={<Education/>}/>
-    <Route path="unicorn" element={<Unicorn/>}/>
-    <Route path="breeding" element={<Breeding/>}/>
-    <Route path="mangrove" element={<Mangrove/>}/>
     <Route path ="projects/*" element={<Projects/>}/>
     <Route path="projects/login" element={<ProjectsLogin />}/>
     {/* <Route path="projects/register" element={<ProjectsRegister />}/> */}
