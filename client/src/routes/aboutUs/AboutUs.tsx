@@ -1,7 +1,7 @@
 import React from 'react'
 import './AboutUs.scss'
 import Footer from '../../components/footer/Footer.tsx'
-import Team from '../../components/team/team'
+import Team from '../../components/team/Team.tsx'
 import FoundationImage from '../../images/foundation image.png'
 const AboutUS = () => {
 

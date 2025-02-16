@@ -1,5 +1,5 @@
 import './volunteering.scss'
-import References from '../../components/references/References'
+import References from '../../components/references/References.tsx'
 import CoralVolunteering from '../../images/coralVolunteering.jpeg'
 import ScubaVolunteering from '../../images/ScubadiveVolunteer.jpg'
 

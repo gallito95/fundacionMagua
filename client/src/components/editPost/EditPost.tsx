@@ -10,21 +10,21 @@ import "./EditPost.scss"
 
 type EditPostStates ={
   id: number;
-  title: string | undefined;
-  desc: string | undefined;
+  title: string ;
+  desc: string;
   file: File | null ;
-  cat: string |undefined;
+  cat: string ;
   img : string | null;
   state: string
 }
 
 const EditPost = () => {
      
-  const state = useLocation().state as EditPostStates | undefined;
-  const [title, setTitle] = useState<string | undefined>(state?.title || "");
-  const [value, setValue] = useState<string | undefined>(state?.desc || "");
+  const state = useLocation().state as EditPostStates;
+  const [title, setTitle] = useState<string>(state.title );
+  const [value, setValue] = useState<string>(state.desc)
   const [file, setFile] = useState<File |null>(null);
-  const [cat, setCat] = useState<string |undefined>(state?.cat || "");
+  const [cat, setCat] = useState<string>(state.cat);
   const [existingImg, setExistingImg] = useState<string | null>(state?.img || "");
   const navigate = useNavigate()
 

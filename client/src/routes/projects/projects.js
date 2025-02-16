@@ -1,7 +1,7 @@
 import React from 'react'
 import { useContext } from 'react'
 import './projects.scss'
-import { AuthContext } from '../../context/authContext'
+import { AuthContext } from '../../context/AuthContext.tsx'
 import { Route, Routes } from 'react-router-dom'
 import ProjectList from '../../components/ProjectList/ProjectList.tsx'
 import BlogHeader from '../../components/blogHeader/BlogHeader.tsx'

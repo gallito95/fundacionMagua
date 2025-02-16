@@ -9,11 +9,19 @@ import Women1 from '../../images/women1.jpg'
 import Women2 from '../../images/women2.jpg'
 import Men1 from '../../images/men3.jpg'
 import Men2 from '../../images/men4.jpg'
-import "./references.scss"
+import "./References.scss"
 
-const References = () => {
+type Clients = {
+  id: number;
+  name:string;
+  img:string;
+  info:string
+}
 
-  const carList = [
+const References: React.FC = () => {
+
+
+  const clients: Clients[] = [
     {
       id: 1,
       name: "Maria Laura",
@@ -45,17 +53,11 @@ const References = () => {
   ];
 
     // List of all cars satisfing all the filters
-  const [filteredList, setFilteredList] = useState(carList);
+  const [filteredList, setFilteredList] = useState<Clients[]>(clients);
   const [currentItem,setCurrentItem] = useState(1)
 
 
-
   // set starting item
-
-
-
-
-
 function nextPerson(){
   if(currentItem < 4){
     setCurrentItem(currentItem => currentItem +1)
@@ -74,8 +76,6 @@ function previousPerson(){
   }
   
 }
-
-
 
     return (
       <section className="block   block-showcase">

@@ -1,8 +1,8 @@
 import { useContext, useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
 import axios from "axios"
-import { AuthContext } from "../../context/authContext"
-import './login.scss'
+import { AuthContext } from "../../context/AuthContext.tsx"
+import 'Login.scss'
 import Footer from '../../components/footer/Footer.tsx';
 
 const Login = () => {

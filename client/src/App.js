@@ -1,23 +1,21 @@
 import Home from "./routes/home/home"
 import {Routes,Route} from "react-router-dom"
-import Navigation from "./routes/navigation/Navbar"
+import Navigation from "./routes/navigation/Navbar.tsx"
 import AboutUs from "./routes/aboutUs/AboutUs"
 import Services from "./routes/services/services"
 import Projects from "./routes/projects/projects.js"
-import Volunteering from "./routes/volunteering/volunteering.js"
+import Volunteering from "./routes/volunteering/Volunteering.js"
 import ProjectsLogin from './components/projectsLogin/ProjectsLogin.tsx'
-import ProjectsRegister from './components/projectsRegister/projectsRegister'
+import ProjectsRegister from './components/projectsRegister/ProjectsRegister.tsx'
 import CreatePost from "./components/createPost/CreatePost.tsx"
 import Postpage from "./components/postPage/PostPage.tsx"
 import EditPost from "./components/editPost/EditPost.tsx"
-
-import Register from "./routes/register/register"
 import Login from "./routes/login/login"
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useEffect } from 'react';
-import { AuthContexProvider } from "./context/authContext"
-import Test from "./components/Test.js"
+import { AuthContexProvider } from "./context/AuthContext.tsx"
+
 
 
 

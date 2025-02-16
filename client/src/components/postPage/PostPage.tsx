@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import BlogHeader from "../blogHeader/BlogHeader.tsx";
-import { AuthContext } from "../../context/authContext.js";
+import { AuthContext } from "../../context/AuthContext.tsx"
 import { useLocation, useNavigate } from "react-router";
 import './PostPage.scss'
 import axios from "axios"
@@ -12,9 +12,14 @@ type Post = {
 
 }
 
+type User= {
+  id: number;
+  unsername: string;
+}
+
 const Postpage = () => {
   const [post, setPost] = useState<Partial<Post>>({})
-  const { currentUser } = useContext(AuthContext);
+  const { currentUser } = useContext<{currentUser: User | null}>(AuthContext);
 
 
   const location = useLocation()
@@ -28,24 +33,26 @@ const Postpage = () => {
 
   }
 
-  const handleDelete = async () => {
+  const handleDelete = async () :Promise <void> => {
     try{
       await axios.delete(`https://ecomagua.org/api/posts/${postID}`)
       navigate("/projects")
      }catch(err){
-       console.log(err)
+       console.log("Failed to delete post:", err)
+       alert("Failed to delete the post. Please try again later.");
      }
   }
 
   
  
   useEffect(() => {
-     const fetchData = async () => {
+     const fetchData = async () :Promise <void> => {
       try{
-       const res = await axios.get(`https://ecomagua.org/api/posts/${postID}`)
+       const res = await axios.get<Post>(`https://ecomagua.org/api/posts/${postID}`)
        setPost(res.data)
       }catch(err){
-        console.log(err)
+        console.error("Failed to fetch post data:", err);
+      alert("Failed to load the post. Please try again later.");
       }
      };
      fetchData();

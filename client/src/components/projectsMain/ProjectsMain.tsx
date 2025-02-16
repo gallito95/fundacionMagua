@@ -5,12 +5,19 @@ import Project3 from '../../images/mangrove1500.webp';
 import Project5 from '../../images/unicorn.jpg';
 import Project1 from '../../images/project1.jpg';
 import axios from 'axios';
-import './projectsMain.scss';
+import './ProjectsMain.scss';
+
+type Post = {
+  id:number;
+  title: string;
+  desc: string;
+  img: string;
+}
 
 const ProjectMain = () => {
 
 
-  const [posts, setPosts] = useState([]);
+  const [posts, setPosts] = useState<Post []>([]);
   const cat = useLocation().search;
 
   useEffect(() => {
@@ -46,7 +53,7 @@ const ProjectMain = () => {
         />
       ))}
         <div className="see-all-projects">
-        <i class="fa-solid fa-arrow-right"></i>
+        <i className="fa-solid fa-arrow-right"></i>
           <Link to="/projects" className="see-all-link">All of our Projects</Link>
         </div>
       </div>

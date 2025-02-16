@@ -3,14 +3,8 @@ import BlogHeader from '../blogHeader/BlogHeader.tsx'
 import { useState } from 'react'
 import { Navigate } from 'react-router'
 import  './ProjectsLogin.scss'
-import { UserContext } from '../../UserContext.js'
+import { UserContext } from '../../context/UserContext.tsx'
 
-type LoginStates = {
-  username: string;
-  password: string;
-  redirect; boolean;
-
-}
 
 const ProjectsLogin = () => {
 
@@ -19,7 +13,7 @@ const [password , setPassword] = useState("")
 const [redirect, setRedirect] = useState(false)
 const {userInfo, setUserInfo} = useContext(UserContext)
  
-async function login (e: React.FormEvent): Promise<void>  {
+const login = async (e: React.FormEvent): Promise<void> => {
 e.preventDefault();
 const response = await fetch('http://localhost:4000/projects/login', {
     method: 'POST',

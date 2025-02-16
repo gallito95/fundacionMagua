@@ -1,4 +1,4 @@
-import './team.scss'
+import React from 'react'
 import Manuel from '../../images/Manuel.jpeg'
 import Adolfo from '../../images/Adolfo.jpeg'
 import Fray from '../../images/Fray.jpeg'
@@ -12,6 +12,7 @@ import Zion from '../../images/Zion.jpeg'
 import Cemento from '../../images/Logo_Cemento.png'
 import KFC from '../../images/Logo_KFC.png'
 import TL from '../../images/Logo_TL.png'
+import './Team.scss'
 
 const Team = () => {
     return (

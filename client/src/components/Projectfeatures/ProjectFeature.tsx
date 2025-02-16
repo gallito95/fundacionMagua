@@ -2,7 +2,14 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import  "./ProjectFeature.scss"
 
-const ProjectFeature = ({ title, description, image, link }) => {
+
+type ProjectFeatureProps= {
+  title:string;
+  description:string;
+  image:string;
+  link:string;
+}
+const ProjectFeature: React.FC<ProjectFeatureProps> = ({ title, description, image, link }) => {
   return (
     <article className="grid feature">
       <div className="feature__content" data-aos="fade-left" data-aos-duration="2000">
@@ -22,4 +29,4 @@ const ProjectFeature = ({ title, description, image, link }) => {
   );
 };
 
-export default ProjectFeature;
+export default ProjectFeature; 

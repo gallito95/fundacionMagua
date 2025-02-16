@@ -2,7 +2,6 @@ import React, { useEffect, useState, useRef } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
-import { CreateOrderData, CreateOrderActions } from "@paypal/react-paypal-js";
 import './Donation.scss';
 import ReactSlider from 'react-slider';
 
@@ -32,17 +31,17 @@ const Donation: React.FC = () => {
     setShowPayPalButton(false);
   };
 
-  const createOrder = (data: { purchase_units: { amount: { value: string } }[] }, actions: { order: { create: Function } }) => {
+  const createOrder = (data: any, actions: any) => {
     return actions.order.create({
       purchase_units: [
         {
           amount: {
-            value: donationAmountRef.current, 
+            value: donationAmountRef.current, // Use the current value of donationAmount
           },
         },
       ],
     });
-};
+  };
 
   const onApprove = (data: any, actions: any) => {
     return actions.order.capture().then((details) => {
